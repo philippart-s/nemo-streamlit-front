@@ -33,9 +33,6 @@ def choice_prediction():
         upload_audio_file = requests.post(api_url + '/send-sound', data=audio_bytes, headers={'Content-Type': 'audio/wave'})
         upload_audio_file.close()
 
-        # define the filename
-        #sound = uploaded_file.name
-        
         st.write('### Classification results')
         
         # if you select the predict button
@@ -45,9 +42,7 @@ def choice_prediction():
             prediction_result.close()
     else:
         st.write('The file has not been uploaded yet')
-    
-    return
-        
+            
 # main
 if __name__ == '__main__':
     

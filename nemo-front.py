@@ -7,6 +7,11 @@ import json
 
 # if you have chosen prediction in the sidebar
 def choice_prediction():
+    # URL fir the API (with the training model)
+    api_url = os.environ.get("API_URL")
+    if (api_url == None):
+        api_url = 'http://127.0.0.1:8080'
+
     st.write('# Prediction')
     st.write('### Choose a marine mammal sound file in .wav format')
     
@@ -25,24 +30,19 @@ def choice_prediction():
         st.audio(audio_bytes, format='audio/wav')
       
         # save_file function
-        upload_audio_file = requests.post('http://127.0.0.1:8080/send-sound', data=audio_bytes, headers={'Content-Type': 'audio/wave'})
+        upload_audio_file = requests.post(api_url + '/send-sound', data=audio_bytes, headers={'Content-Type': 'audio/wave'})
         upload_audio_file.close()
 
-        # define the filename
-        #sound = uploaded_file.name
-        
         st.write('### Classification results')
         
         # if you select the predict button
         if st.button('Predict'):
-            prediction_result = requests.get('http://127.0.0.1:8080/get-animal-name?sound_name=sound-uploaded')
+            prediction_result = requests.get(api_url + '/get-animal-name?sound_name=sound-uploaded')
             st.write("The marine mammal is: ",  prediction_result.json()["animal"])
             prediction_result.close()
     else:
         st.write('The file has not been uploaded yet')
-    
-    return
-        
+            
 # main
 if __name__ == '__main__':
     

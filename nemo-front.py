@@ -3,7 +3,6 @@ import streamlit as st
 import os
 from PIL import Image
 import requests
-import json
 
 # if you have chosen prediction in the sidebar
 def choice_prediction():

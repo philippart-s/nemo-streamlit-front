@@ -29,13 +29,10 @@ def choice_prediction():
         st.audio(audio_bytes, format='audio/wav')
       
         # save_file function
-        upload_audio_file = requests.post(api_url + '/send-sound', data=audio_bytes, headers={'Content-Type': 'audio/wave'})
-        upload_audio_file.close()
-
-        st.write('### Classification results')
-        
-        # if you select the predict button
         if st.button('Predict'):
+            upload_audio_file = requests.post(api_url + '/send-sound', data=audio_bytes, headers={'Content-Type': 'audio/wave'})
+            upload_audio_file.close()
+            st.write('### Classification results')   
             prediction_result = requests.get(api_url + '/get-animal-name?sound_name=sound-uploaded')
             st.write("The marine mammal is: ",  prediction_result.json()["animal"])
             prediction_result.close()
@@ -44,7 +41,6 @@ def choice_prediction():
             
 # main
 if __name__ == '__main__':
-    
     st.image(Image.open('logo_ovh.png'), width=200)
     st.write('___')
     

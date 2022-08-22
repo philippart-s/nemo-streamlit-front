@@ -4,9 +4,6 @@ WORKDIR /workspace
 
 RUN pip3 install --upgrade pip
 
-#RUN apt-get update 
-#RUN apt-get install libsndfile-dev -y
-
 ADD . /workspace/
 
 RUN pip3 install -r requirements.txt

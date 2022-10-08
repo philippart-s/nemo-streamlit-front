@@ -1,0 +1,5 @@
+tasks:
+  - init: pip install -r requirements.txt
+    command: read -p "URL of back-end:" URL && export API_URL=$URL && streamlit run nemo-front.py 
+
+

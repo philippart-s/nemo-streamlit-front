@@ -19,4 +19,4 @@ Source code for the front for Nemo talk with streamlit
 
 ## OVHcloud :
 
-  - run : ` ovhai app run --name nemo-front-end --unsecure-http --cpu 1 -p 8501 -e API_URL=<URL back end> wilda/nemo-front-end:1.1.0`
+  - run: ` ovhai app run --name nemo-front-end --unsecure-http --cpu 1 -p 8501 -e API_URL=<URL back end> wilda/nemo-front-end:1.1.0`

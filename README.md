@@ -3,12 +3,12 @@ Source code for the front for Nemo talk with streamlit
 
 ## Requirements 
 
-    - install requirements with pip : `pip install requirements.txt`
+    - install requirements with pip: `pip install -r requirements.txt`
 
 ## Docker
 
-    - build image : `docker build . -t wilda/nemo-front-end:1.1.0` or for Mac M1 : `docker buildx build --platform linux/amd64 . -t wilda/nemo-front-end:1.1.0`
-    - run image : `docker run -p 8501:8501 -e API_URL=<back-end URL> wilda/nemo-front-end:1.1.0`
+    - build image: `docker build . -t wilda/nemo-front-end:1.1.0` or for Mac M1 : `docker buildx build --platform linux/amd64 . -t wilda/nemo-front-end:1.1.0`
+    - run image: `docker run -p 8501:8501 -e API_URL=<back-end URL> wilda/nemo-front-end:1.1.0`
 
 ## Local / Gitpod
 
